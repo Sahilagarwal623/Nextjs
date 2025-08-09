@@ -31,3 +31,7 @@ const UserSchema: Schema<User> = new Schema({
     isAcceptingMessages: { type: Boolean, default: true }
 });
 
+const UserModel = (mongoose.models.User as mongoose.Model<User> || mongoose.model<User>("User", UserSchema));
+
+
+export default UserModel;
